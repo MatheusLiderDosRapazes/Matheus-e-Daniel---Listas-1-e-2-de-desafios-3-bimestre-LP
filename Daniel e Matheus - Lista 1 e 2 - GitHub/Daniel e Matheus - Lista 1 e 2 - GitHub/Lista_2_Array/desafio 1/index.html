@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>desafio 1</title>
+</head>
+<body>
+    <h1> ARRAYS - Itens</h1>
+    <script>
+        var n = [[], [], []];
+        
+        n[0][0] = parseInt(prompt("Digite o primeiro número da 1ª array"));
+        n[0][1] = parseInt(prompt("Digite o segundo número da 1ª array"));
+        n[0][2] = parseInt(prompt("Digite o terceiro número da 1ª array"));
+
+        n[1][0] = parseInt(prompt("Digite o primeiro número da 2ª array"));
+        n[1][1] = parseInt(prompt("Digite o segundo número da 2ª array"));
+        n[1][2] = parseInt(prompt("Digite o terceiro número da 2ª array"));
+
+        n[2][0] = parseInt(prompt("Digite o primeiro número da 3ª array"));
+        n[2][1] = parseInt(prompt("Digite o segundo número da 3ª array"));
+        n[2][2] = parseInt(prompt("Digite o terceiro número da 3ª array"));
+
+        document.write("Números do 1º array: " + n[0] + "<br>");
+        document.write("Números do 2º array: " + n[1] + "<br>");
+        document.write("Números do 3º array: " + n[2] + "<br>");
+
+        var total = 0;
+        n.forEach(function(array) {
+            total += array.reduce(function(soma, valor) {
+                return soma + valor;
+            }, 0);
+        });
+
+        document.write("Soma total dos valores: " + total);
+    </script>
+ 
+</body>
+</html>

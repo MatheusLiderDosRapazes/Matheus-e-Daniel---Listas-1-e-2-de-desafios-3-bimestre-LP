@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio 3</title>
+</head>
+<body>
+    <script>
+        var num = [[], [], []];
+        var MaiorValor
+        
+        num[0][0] = parseInt(prompt("Digite o valor do primeiro array"));
+        num[0][1] = parseInt(prompt("Digite o valor do primeiro array"));
+        num[0][2] = parseInt(prompt("Digite o valor do primeiro array"));
+
+        num[1][0] = parseInt(prompt("Digite o valor do segundo array"));
+        num[1][1] = parseInt(prompt("Digite o valor do segundo array"));
+        num[1][2] = parseInt(prompt("Digite o valor do segundo array"));
+
+        num[2][0] = parseInt(prompt("Digite o valor do terceiro array"));
+        num[2][1] = parseInt(prompt("Digite o valor do terceiro array"));
+        num[2][2] = parseInt(prompt("Digite o valor do terceiro array"));
+
+        document.write("Números do 1º array: " + num[0] + "<br>");
+        document.write("Números do 2º array: " + num[1] + "<br>");
+        document.write("Números do 3º array: " + num[2] + "<br>");
+
+        function encontrarMaiorValor(array) {
+            var maior = array[0][0];
+            for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 3; j++) {
+            if (array[i][j] > maior) {
+                maior = array[i][j];
+            }}}
+            return maior;
+        }
+        MaiorValor = encontrarMaiorValor(num);
+
+        document.write("Valores do primeiro array: " + num[0] + "<br>");
+        document.write("Valores do segundo array: " + num[1] + "<br>");
+        document.write("Valores do terceiro array: " + num[2] + "<br>");
+        document.write("O maior valor digitado é: " + MaiorValor + "<br>");
+    </script>
+</body>
+</html>

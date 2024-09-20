@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>desafio 2</title>
+</head>
+<body>
+    <h2>N° das matrizes</h2>
+    <div id="matrizes">
+    <h1>Matriz 1</h1>
+        <input type="num" id="n00" placeholder="1">
+        <input type="num" id="n01" placeholder="2">
+        <input type="num" id="n02" placeholder="3">
+    <h1>Matriz 2</h1>
+        <input type="num" id="n10" placeholder="4">
+        <input type="num" id="n11" placeholder="5">
+        <input type="num" id="n12" placeholder="6">
+    <h1>Matriz 3</h1>
+        <input type="num" id="n20" placeholder="7">
+        <input type="num" id="n21" placeholder="8">
+        <input type="num" id="n22" placeholder="9"></div>
+    <h2>Multiplicador</h2>
+    <input type="num" id="mult" placeholder="número multiplicador">
+    <button onclick="multiplicar()">Quer multiplicar? Aperta esse botão aqui fazendo o favor kkk</button>
+    <h2>Matriz</h2>
+    <div id="m1"></div>
+    <h2>Matriz Multiplicada</h2>
+    <div id="matMult"></div>
+
+    <script>
+    function valMat() {
+    return [
+[
+    parseFloat(document.querySelector('#n00').value) || 0,
+    parseFloat(document.querySelector('#n01').value) || 0,
+    parseFloat(document.querySelector('#n02').value) || 0
+],
+[
+    parseFloat(document.querySelector('#n10').value) || 0,
+    parseFloat(document.querySelector('#n11').value) || 0,
+    parseFloat(document.querySelector('#n12').value) || 0
+],
+[
+    parseFloat(document.querySelector('#n20').value) || 0,
+    parseFloat(document.querySelector('#n21').value) || 0,
+    parseFloat(document.querySelector('#n22').value) || 0
+]
+];
+        }
+        function multi() {
+            return parseFloat(document.querySelector('#mult').value) || 1;
+        }
+        function multMat(matriz, mult) {
+            return matriz.map(row => row.map(valor => valor * mult));
+        }
+        function eMatriz(id, matriz) {
+            const ele = document.querySelector(id);
+            ele.innerHTML = matriz.map(row => row.join(', ')).join('<br>');
+        }
+        function multiplicar() {
+            const mat = valMat();
+            const mult = multi();
+            const matMult = multMat(mat, mult);
+
+            eMatriz('#m1', mat);
+            eMatriz('#matMult', matMult);
+        }
+    </script>
+</body>
+</html>
+
